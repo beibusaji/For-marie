@@ -1,119 +1,119 @@
+/* Apply global styles */
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to top right, #fbc6d3, #d0a1d1); /* Pastel pink to pastel purple */
-  font-family: 'Poppins', cursive, sans-serif;
+  background: linear-gradient(to top right, #f9b0d9, #c7a7ff); /* pastel pink and purple */
+  font-family: 'Poppins', sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
   height: 100vh;
+  overflow-y: auto; /* Allow scrolling */
+}
+
+/* Envelope styles */
+.envelope {
+  width: 90%;
+  max-width: 800px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   overflow: hidden;
-  text-align: center;
-}
-
-h1 {
-  color: #e2a2d0; /* Soft pastel pink */
-  font-size: 3.5em; /* Larger size for better readability */
-  animation: float 3s ease-in-out infinite;
-  margin: 0;
-}
-
-p, #secretMessage {
-  font-size: 1.6em; /* Larger size for readability */
-  max-width: 90%;
-  color: #5b3e60; /* Darker pastel purple for readability */
-  line-height: 1.8;
+  position: relative;
   margin-top: 20px;
 }
 
+/* Envelope flap */
+.envelope-flap {
+  background-color: #ff4081;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  border-radius: 0 0 50% 50%;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+/* Main content inside the envelope */
+.content-wrapper {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2;
+  position: relative;
+}
+
+/* Main title styling */
+h1 {
+  color: #ff4081;
+  font-size: 3em; /* Increased size for better readability */
+  margin-bottom: 20px;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Styling the first sentence to make it larger */
+.main-text {
+  font-size: 2em; /* Larger size for readability */
+  font-weight: bold;
+  color: #444;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+/* General paragraph styling */
+p {
+  font-size: 1.5em;
+  max-width: 90%;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Love meter bar (if you want it visible or for future purposes) */
+.love-meter {
+  width: 100%;
+  height: 10px;
+  background-color: #e0b0ff;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.love-fill {
+  height: 100%;
+  width: 50%;
+  background-color: #ff4081;
+  border-radius: 5px;
+}
+
+/* Button styling */
+button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #ff4081;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #f03d7b;
+}
+
+/* Keyframes for floating effect */
 @keyframes float {
-  0%, 100% {
+  0% {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
   }
-}
-
-.love-meter {
-  width: 80%;
-  max-width: 300px;
-  height: 30px;
-  background: #f7e1f2; /* Soft light pink for the background */
-  border-radius: 15px;
-  margin: 20px 0;
-  overflow: hidden;
-  border: 2px solid #e2a2d0; /* Soft pastel pink border */
-}
-
-.love-fill {
-  width: 0;
-  height: 100%;
-  background: #d0a1d1; /* Pastel purple for the fill */
-  animation: fillLove 4s forwards;
-}
-
-@keyframes fillLove {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-button {
-  padding: 12px 25px;
-  font-size: 1.2em;
-  background-color: #e2a2d0; /* Pastel pink button */
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 30px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #d085a3; /* Darker pastel pink on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5em; /* Smaller font on smaller screens */
-  }
-
-  p, #secretMessage {
-    font-size: 1.4em; /* Smaller font for readability on small screens */
-  }
-
-  button {
-    padding: 10px 20px;
-    font-size: 1.1em;
-  }
-
-  .love-meter {
-    width: 90%; /* Adjust love meter width for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 2em; /* Further reduce size on very small screens */
-  }
-
-  p, #secretMessage {
-    font-size: 1.3em; /* Even smaller text size */
-  }
-
-  button {
-    padding: 8px 15px;
-    font-size: 1em;
-  }
-
-  .love-meter {
-    width: 100%; /* Full width on small screens */
+  100% {
+    transform: translateY(0);
   }
 }
